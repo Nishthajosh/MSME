@@ -1,17 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import prisma from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: NextRequest) {
   try {
-    if (!prisma) {
-      return NextResponse.json(
-        { error: 'Database not configured' },
-        { status: 503 }
-      );
-    }
-
     const body = await request.json();
     const {
       businessName,
@@ -45,29 +37,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create funding application
-    const application = await prisma.fundingApplication.create({
-      data: {
-        businessName,
-        contactName,
-        email,
-        phone,
-        businessType,
-        fundingRequired,
-        businessStage,
-        annualRevenue: annualRevenue || null,
-        employees: employees || null,
-        industry: industry || null,
-        state: state || null,
-        description: description || null,
-      },
-    });
+    // Log the application (you can integrate email service here)
+    console.log('Funding application:', { businessName, contactName, email, phone, businessType, fundingRequired, businessStage });
 
     return NextResponse.json(
       { 
         success: true, 
-        message: 'Your funding application has been submitted successfully! Our team will contact you within 24-48 hours.',
-        id: application.id 
+        message: 'Your funding application has been submitted successfully! Our team will contact you within 24-48 hours.'
       },
       { status: 201 }
     );
@@ -81,23 +57,5 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  try {
-    if (!prisma) {
-      return NextResponse.json(
-        { error: 'Database not configured' },
-        { status: 503 }
-      );
-    }
-
-    const applications = await prisma.fundingApplication.findMany({
-      orderBy: { createdAt: 'desc' },
-    });
-    return NextResponse.json(applications);
-  } catch (error) {
-    console.error('Error fetching funding applications:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch applications' },
-      { status: 500 }
-    );
-  }
+  return NextResponse.json({ message: 'Funding API is working' });
 }

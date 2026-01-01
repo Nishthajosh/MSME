@@ -1,17 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import prisma from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: NextRequest) {
   try {
-    if (!prisma) {
-      return NextResponse.json(
-        { error: 'Database not configured' },
-        { status: 503 }
-      );
-    }
-
     const body = await request.json();
     const { name, email, phone, company, message } = body;
 
@@ -32,19 +24,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create contact submission
-    const submission = await prisma.contactSubmission.create({
-      data: {
-        name,
-        email,
-        phone,
-        company: company || null,
-        message,
-      },
-    });
+    // Log the submission (you can integrate email service here)
+    console.log('Contact form submission:', { name, email, phone, company, message });
 
     return NextResponse.json(
-      { success: true, message: 'Your message has been sent successfully!', id: submission.id },
+      { success: true, message: 'Your message has been sent successfully!' },
       { status: 201 }
     );
   } catch (error) {
@@ -57,23 +41,5 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  try {
-    if (!prisma) {
-      return NextResponse.json(
-        { error: 'Database not configured' },
-        { status: 503 }
-      );
-    }
-
-    const submissions = await prisma.contactSubmission.findMany({
-      orderBy: { createdAt: 'desc' },
-    });
-    return NextResponse.json(submissions);
-  } catch (error) {
-    console.error('Error fetching contacts:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch submissions' },
-      { status: 500 }
-    );
-  }
+  return NextResponse.json({ message: 'Contact API is working' });
 }

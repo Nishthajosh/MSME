@@ -1,18 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import prisma from '@/lib/db';
-import { createSession, hashPassword, verifyPassword } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
 
+// Hardcoded admin credentials (change these in production)
+const ADMIN_EMAIL = 'admin@ewolyn.com';
+const ADMIN_PASSWORD = 'admin123';
+
 export async function POST(request: NextRequest) {
   try {
-    if (!prisma) {
-      return NextResponse.json(
-        { error: 'Database not configured' },
-        { status: 503 }
-      );
-    }
-
     const body = await request.json();
     const { email, password } = body;
 
@@ -23,36 +18,21 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Find admin by email
-    const admin = await prisma.admin.findUnique({
-      where: { email },
-    });
-
-    if (!admin) {
+    // Check credentials
+    if (email !== ADMIN_EMAIL || password !== ADMIN_PASSWORD) {
       return NextResponse.json(
         { error: 'Invalid email or password' },
         { status: 401 }
       );
     }
-
-    // Verify password
-    if (!verifyPassword(password, admin.password)) {
-      return NextResponse.json(
-        { error: 'Invalid email or password' },
-        { status: 401 }
-      );
-    }
-
-    // Create session
-    await createSession(admin.id);
 
     return NextResponse.json({
       success: true,
       message: 'Login successful',
       admin: {
-        id: admin.id,
-        email: admin.email,
-        name: admin.name,
+        id: '1',
+        email: ADMIN_EMAIL,
+        name: 'Admin',
       },
     });
   } catch (error) {

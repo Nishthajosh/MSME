@@ -1,17 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import prisma from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: NextRequest) {
   try {
-    if (!prisma) {
-      return NextResponse.json(
-        { error: 'Database not configured' },
-        { status: 503 }
-      );
-    }
-
     const body = await request.json();
     const { name, email, phone, service, preferredDate, message } = body;
 
@@ -32,23 +24,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create consultation booking
-    const booking = await prisma.consultationBooking.create({
-      data: {
-        name,
-        email,
-        phone,
-        service,
-        preferredDate: preferredDate || null,
-        message: message || null,
-      },
-    });
+    // Log the booking (you can integrate email service here)
+    console.log('Consultation booking:', { name, email, phone, service, preferredDate, message });
 
     return NextResponse.json(
       { 
         success: true, 
-        message: 'Your consultation has been booked successfully! We will contact you shortly.',
-        id: booking.id 
+        message: 'Your consultation has been booked successfully! We will contact you shortly.'
       },
       { status: 201 }
     );
@@ -62,23 +44,5 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  try {
-    if (!prisma) {
-      return NextResponse.json(
-        { error: 'Database not configured' },
-        { status: 503 }
-      );
-    }
-
-    const bookings = await prisma.consultationBooking.findMany({
-      orderBy: { createdAt: 'desc' },
-    });
-    return NextResponse.json(bookings);
-  } catch (error) {
-    console.error('Error fetching consultations:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch bookings' },
-      { status: 500 }
-    );
-  }
+  return NextResponse.json({ message: 'Consultation API is working' });
 }
