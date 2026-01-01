@@ -6,6 +6,14 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
+    // Check if database is available
+    if (!prisma) {
+      return NextResponse.json(
+        { error: 'Database not configured' },
+        { status: 503 }
+      );
+    }
+
     const session = await getSession();
     
     if (!session) {

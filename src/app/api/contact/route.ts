@@ -5,6 +5,13 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(request: NextRequest) {
   try {
+    if (!prisma) {
+      return NextResponse.json(
+        { error: 'Database not configured' },
+        { status: 503 }
+      );
+    }
+
     const body = await request.json();
     const { name, email, phone, company, message } = body;
 
@@ -51,6 +58,13 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   try {
+    if (!prisma) {
+      return NextResponse.json(
+        { error: 'Database not configured' },
+        { status: 503 }
+      );
+    }
+
     const submissions = await prisma.contactSubmission.findMany({
       orderBy: { createdAt: 'desc' },
     });
