@@ -1,0 +1,64 @@
+// Prisma schema for Ewolyn website
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  company   String?
+  message   String
+  status    String   @default("new") // new, read, responded
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model FundingApplication {
+  id              String   @id @default(cuid())
+  businessName    String
+  contactName     String
+  email           String
+  phone           String
+  businessType    String
+  fundingRequired String
+  businessStage   String   // idea, early, growth, established
+  annualRevenue   String?
+  employees       String?
+  industry        String?
+  state           String?
+  description     String?
+  status          String   @default("pending") // pending, reviewing, approved, rejected
+  notes           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model ConsultationBooking {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  phone       String
+  service     String
+  preferredDate String?
+  message     String?
+  status      String   @default("pending") // pending, confirmed, completed, cancelled
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
