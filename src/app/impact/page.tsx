@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ImpactPage() {
   return (
-    <main className="overflow-hidden pt-20">
+    <main className="overflow-hidden">
       <ImpactHero />
       <ImpactMetrics />
       <SuccessStories />

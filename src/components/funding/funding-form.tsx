@@ -119,7 +119,7 @@ export function FundingForm() {
   }
 
   return (
-    <section id="funding-form" className="py-20 bg-slate-50">
+    <section id="funding-form" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <AnimateOnScroll>
           <div className="text-center mb-12">
@@ -135,13 +135,51 @@ export function FundingForm() {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
+          {/* Contact Info Cards */}
+          <AnimateOnScroll delay={100}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <a href="tel:7777941611" className="bg-white rounded-xl p-5 shadow-md hover:shadow-lg transition-shadow flex items-center gap-4">
+                <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Phone className="h-5 w-5 text-emerald-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">Call Us</p>
+                  <p className="font-semibold text-gray-900">+91 77779 41611</p>
+                </div>
+              </a>
+
+              <a href="mailto:info.ewolyn@gmail.com" className="bg-white rounded-xl p-5 shadow-md hover:shadow-lg transition-shadow flex items-center gap-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Mail className="h-5 w-5 text-blue-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">Email Us</p>
+                  <p className="font-semibold text-gray-900">info.ewolyn@gmail.com</p>
+                </div>
+              </a>
+
+              <div className="bg-white rounded-xl p-5 shadow-md flex items-center gap-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="h-5 w-5 text-purple-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">Success Rate</p>
+                  <p className="font-semibold text-gray-900">95% Approval</p>
+                </div>
+              </div>
+            </div>
+          </AnimateOnScroll>
+
           {/* Form */}
           <AnimateOnScroll delay={200}>
-            <Card className="lg:col-span-2 shadow-xl">
-              <CardContent className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">Apply for Funding</h3>
+              <form onSubmit={handleSubmit} className="space-y-8">
+                {/* Personal Details */}
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-4 pb-2 border-b">Contact Details</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Business Name *</label>
                       <Input
@@ -150,6 +188,7 @@ export function FundingForm() {
                         onChange={handleChange}
                         placeholder="Your Company Name"
                         required
+                        className="w-full h-12 rounded-lg"
                       />
                     </div>
                     <div>
@@ -160,6 +199,7 @@ export function FundingForm() {
                         onChange={handleChange}
                         placeholder="Your Name"
                         required
+                        className="w-full h-12 rounded-lg"
                       />
                     </div>
                     <div>
@@ -171,6 +211,7 @@ export function FundingForm() {
                         onChange={handleChange}
                         placeholder="your@email.com"
                         required
+                        className="w-full h-12 rounded-lg"
                       />
                     </div>
                     <div>
@@ -181,15 +222,23 @@ export function FundingForm() {
                         onChange={handleChange}
                         placeholder="+91 98765 43210"
                         required
+                        className="w-full h-12 rounded-lg"
                       />
                     </div>
+                  </div>
+                </div>
+
+                {/* Business Details */}
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-4 pb-2 border-b">Business Details</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Business Type *</label>
                       <select
                         name="businessType"
                         value={formData.businessType}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+                        className="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                         required
                       >
                         <option value="">Select type...</option>
@@ -201,30 +250,12 @@ export function FundingForm() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Funding Required *</label>
-                      <select
-                        name="fundingRequired"
-                        value={formData.fundingRequired}
-                        onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
-                        required
-                      >
-                        <option value="">Select amount...</option>
-                        <option value="5-10L">₹5-10 Lakhs</option>
-                        <option value="10-25L">₹10-25 Lakhs</option>
-                        <option value="25-50L">₹25-50 Lakhs</option>
-                        <option value="50L-1Cr">₹50L - 1 Crore</option>
-                        <option value="1-5Cr">₹1-5 Crores</option>
-                        <option value="5-10Cr">₹5-10 Crores</option>
-                      </select>
-                    </div>
-                    <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Business Stage *</label>
                       <select
                         name="businessStage"
                         value={formData.businessStage}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+                        className="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                         required
                       >
                         <option value="">Select stage...</option>
@@ -240,7 +271,7 @@ export function FundingForm() {
                         name="industry"
                         value={formData.industry}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+                        className="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                       >
                         <option value="">Select industry...</option>
                         {industries.map((ind) => (
@@ -249,12 +280,51 @@ export function FundingForm() {
                       </select>
                     </div>
                     <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">State</label>
+                      <select
+                        name="state"
+                        value={formData.state}
+                        onChange={handleChange}
+                        className="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                      >
+                        <option value="">Select state...</option>
+                        {states.map((st) => (
+                          <option key={st} value={st}>{st}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Funding Details */}
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-4 pb-2 border-b">Funding Requirements</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Funding Required *</label>
+                      <select
+                        name="fundingRequired"
+                        value={formData.fundingRequired}
+                        onChange={handleChange}
+                        className="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        required
+                      >
+                        <option value="">Select amount...</option>
+                        <option value="5-10L">₹5-10 Lakhs</option>
+                        <option value="10-25L">₹10-25 Lakhs</option>
+                        <option value="25-50L">₹25-50 Lakhs</option>
+                        <option value="50L-1Cr">₹50L - 1 Crore</option>
+                        <option value="1-5Cr">₹1-5 Crores</option>
+                        <option value="5-10Cr">₹5-10 Crores</option>
+                      </select>
+                    </div>
+                    <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Annual Revenue</label>
                       <select
                         name="annualRevenue"
                         value={formData.annualRevenue}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+                        className="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                       >
                         <option value="">Select revenue...</option>
                         <option value="0-10L">₹0 - 10 Lakhs</option>
@@ -264,22 +334,8 @@ export function FundingForm() {
                         <option value="5Cr+">₹5 Crores+</option>
                       </select>
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">State</label>
-                      <select
-                        name="state"
-                        value={formData.state}
-                        onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
-                      >
-                        <option value="">Select state...</option>
-                        {states.map((st) => (
-                          <option key={st} value={st}>{st}</option>
-                        ))}
-                      </select>
-                    </div>
                   </div>
-                  <div>
+                  <div className="mt-6">
                     <label className="block text-sm font-medium text-gray-700 mb-2">Brief Description</label>
                     <Textarea
                       name="description"
@@ -287,81 +343,27 @@ export function FundingForm() {
                       onChange={handleChange}
                       placeholder="Tell us about your business and funding needs..."
                       rows={4}
+                      className="w-full rounded-lg"
                     />
                   </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                        Submitting...
-                      </>
-                    ) : (
-                      'Submit Application'
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </AnimateOnScroll>
+                </div>
 
-          {/* Contact Info */}
-          <AnimateOnScroll delay={400}>
-            <div className="space-y-6">
-              <Card className="shadow-lg">
-                <CardHeader>
-                  <CardTitle>Call Us Directly</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">
-                    Speak with our funding experts directly. Available Monday to Saturday, 9 AM - 6 PM.
-                  </p>
-                  <Button asChild className="w-full" variant="outline">
-                    <a href="tel:7777941611" className="flex items-center justify-center gap-2">
-                      <Phone className="h-5 w-5" />
-                      +91 77779 41611
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg">
-                <CardHeader>
-                  <CardTitle>Email Us</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <Button asChild className="w-full" variant="outline">
-                    <a href="mailto:info.ewolyn@gmail.com" className="flex items-center justify-center gap-2">
-                      <Mail className="h-5 w-5" />
-                      info.ewolyn@gmail.com
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg bg-gradient-to-br from-emerald-50 to-teal-50">
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-gray-900 mb-3">Why Choose Us?</h3>
-                  <ul className="space-y-2">
-                    {[
-                      '95% Success Rate',
-                      'Expert Funding Consultants',
-                      '50+ Scheme Options',
-                      'End-to-End Support',
-                      'No Hidden Charges',
-                    ].map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-sm text-gray-700">
-                        <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full h-14 text-lg font-semibold rounded-lg bg-emerald-500 hover:bg-emerald-600"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    'Submit Application'
+                  )}
+                </Button>
+              </form>
             </div>
           </AnimateOnScroll>
         </div>

@@ -30,7 +30,7 @@ const AnimatedRocket = ({ onAnimationEnd }: { onAnimationEnd: () => void }) => {
 };
 
 
-export function MainNav() {
+export function MainNav({ scrolled = false }: { scrolled?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isRocketAnimating, setIsRocketAnimating] = useState(false);
 
@@ -73,8 +73,12 @@ export function MainNav() {
           key={href}
           href={href}
           onClick={(e) => handleLinkClick(e, href)}
-          className="text-lg font-medium hover:text-soft-orange transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-soft-orange after:transition-all after:duration-300 hover:after:w-full"
-          style={{ color: '#E07A5F' }}
+          className={cn(
+            "text-lg font-medium transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:transition-all after:duration-300 hover:after:w-full",
+            scrolled 
+              ? "text-white/90 hover:text-white after:bg-white" 
+              : "text-white hover:text-white/80 after:bg-white"
+          )}
         >
           {label}
         </Link>
@@ -89,7 +93,12 @@ export function MainNav() {
         <NavLinksComponent />
         <Button
           asChild
-          className="group rounded-full font-bold shadow-lg transition-transform hover:scale-105 bg-black text-white hover:bg-black/90"
+          className={cn(
+            "group rounded-full font-bold shadow-lg transition-transform hover:scale-105",
+            scrolled 
+              ? "bg-white text-gray-900 hover:bg-white/90" 
+              : "bg-white text-gray-900 hover:bg-white/90"
+          )}
         >
           <Link href="/contact" className="relative">
             Get Consultation

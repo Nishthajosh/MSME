@@ -76,28 +76,6 @@ export function Hero() {
             </a>
           </div>
         </AnimateOnScroll>
-        
-        {/* Stats Counter */}
-        <AnimateOnScroll startVisible delay={1000}>
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <p className="text-4xl md:text-5xl font-bold text-orange-400">500+</p>
-              <p className="text-white/70">Startups Served</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl md:text-5xl font-bold text-green-400">₹50Cr+</p>
-              <p className="text-white/70">Funding Facilitated</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl md:text-5xl font-bold text-blue-400">1000+</p>
-              <p className="text-white/70">Certifications Done</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl md:text-5xl font-bold text-purple-400">50+</p>
-              <p className="text-white/70">Expert Consultants</p>
-            </div>
-          </div>
-        </AnimateOnScroll>
       </div>
     </section>
   );

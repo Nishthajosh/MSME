@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="overflow-hidden pt-20">
+    <main className="overflow-hidden">
       <ContactHero />
       <ContactForm />
       <OfficeLocations />

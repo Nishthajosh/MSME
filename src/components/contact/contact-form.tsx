@@ -82,155 +82,139 @@ export function ContactForm() {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
+        <div className="max-w-4xl mx-auto">
+          {/* Section Header */}
           <AnimateOnScroll>
-            <Card className="lg:col-span-2 shadow-xl">
-              <CardHeader>
-                <CardTitle className="text-2xl">Send us a Message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Your Name *
-                      </label>
-                      <Input
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="John Doe"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address *
-                      </label>
-                      <Input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="john@example.com"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number *
-                      </label>
-                      <Input
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="+91 98765 43210"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Company Name
-                      </label>
-                      <Input
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        placeholder="Your Company"
-                      />
-                    </div>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Get In Touch With Us
+              </h2>
+              <p className="text-gray-600">
+                Have a question or ready to start your business journey? Fill out the form below.
+              </p>
+            </div>
+          </AnimateOnScroll>
+
+          {/* Contact Cards */}
+          <AnimateOnScroll delay={100}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <a href="tel:7777941611" className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow text-center">
+                <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="h-6 w-6 text-orange-600" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-1">Call Us</h3>
+                <p className="text-orange-600 font-medium">+91 77779 41611</p>
+              </a>
+
+              <div className="bg-white rounded-2xl p-6 shadow-md text-center">
+                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="h-6 w-6 text-blue-600" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-1">Business Hours</h3>
+                <p className="text-gray-600">Mon - Sat: 9AM - 6PM</p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 shadow-md text-center">
+                <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="h-6 w-6 text-green-600" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-1">Head Office</h3>
+                <p className="text-gray-600">Ahmedabad, Gujarat</p>
+              </div>
+            </div>
+          </AnimateOnScroll>
+
+          {/* Contact Form */}
+          <AnimateOnScroll delay={200}>
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Your Name *
+                    </label>
+                    <Input
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="John Doe"
+                      required
+                      className="w-full h-12 rounded-lg"
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Your Message *
+                      Email Address *
                     </label>
-                    <Textarea
-                      name="message"
-                      value={formData.message}
+                    <Input
+                      type="email"
+                      name="email"
+                      value={formData.email}
                       onChange={handleChange}
-                      placeholder="Tell us about your requirements..."
-                      rows={5}
+                      placeholder="john@example.com"
                       required
+                      className="w-full h-12 rounded-lg"
                     />
                   </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      'Send Message'
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </AnimateOnScroll>
-
-          {/* Contact Info */}
-          <AnimateOnScroll delay={200}>
-            <div className="space-y-6">
-              <Card className="shadow-lg bg-gradient-to-br from-orange-50 to-white">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-orange-600" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-900">Call Us</h3>
-                      <a href="tel:7777941611" className="text-orange-600 hover:underline">
-                        +91 77779 41611
-                      </a>
-                    </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number *
+                    </label>
+                    <Input
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="+91 98765 43210"
+                      required
+                      className="w-full h-12 rounded-lg"
+                    />
                   </div>
-                  <p className="text-sm text-gray-600">
-                    Speak directly with our experts for immediate assistance.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <Clock className="h-6 w-6 text-blue-600" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-900">Business Hours</h3>
-                      <p className="text-gray-600">Mon - Sat: 9AM - 6PM</p>
-                    </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Company Name
+                    </label>
+                    <Input
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      placeholder="Your Company"
+                      className="w-full h-12 rounded-lg"
+                    />
                   </div>
-                  <p className="text-sm text-gray-600">
-                    We respond to all inquiries within 24 hours during business days.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-green-600" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-900">Head Office</h3>
-                      <p className="text-gray-600">Ahmedabad, Gujarat</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-gray-600">
-                    Multiple offices across Gujarat, UP, Maharashtra & West Bengal.
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Your Message *
+                  </label>
+                  <Textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell us about your requirements..."
+                    rows={5}
+                    required
+                    className="w-full rounded-lg"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full h-12 text-base font-semibold rounded-lg bg-orange-500 hover:bg-orange-600"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Message'
+                  )}
+                </Button>
+              </form>
             </div>
           </AnimateOnScroll>
         </div>

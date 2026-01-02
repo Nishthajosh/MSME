@@ -1,5 +1,6 @@
 
 import { Hero } from '@/components/sections/hero';
+import { Stats } from '@/components/sections/stats';
 import ClientSlider from '@/components/ClientSlider';
 import { Services } from '@/components/sections/services';
 import { Funding } from '@/components/sections/funding';
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <Hero />
+      <Stats />
       <ClientSlider />
       <Services />
       <Funding />

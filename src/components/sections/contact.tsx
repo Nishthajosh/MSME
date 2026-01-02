@@ -1,10 +1,27 @@
 
+'use client';
+
 import { Section, SectionTitle, SectionDescription } from '@/components/ui/section';
 import { Button } from '../ui/button';
 import { Phone, Mail } from 'lucide-react';
 import { AnimateOnScroll } from '../animate-on-scroll';
 
 export function Contact() {
+  const phoneNumber = '917777941611';
+  const whatsappMessage = encodeURIComponent('Hi, I would like to book a consultation.');
+
+  const handleConsultationClick = () => {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // On mobile, open phone dialer
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      // On tablet/desktop, open WhatsApp
+      window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
+    }
+  };
+
   return (
     <Section id="contact" className="bg-background">
       <AnimateOnScroll>
@@ -34,8 +51,12 @@ export function Contact() {
               <span>Email: info.ewolyn@gmail.com</span>
             </a>
           </div>
-          <Button asChild size="lg" className="rounded-full font-bold shadow-lg transition-transform hover:scale-105">
-            <a href="tel:7777941611">Call Now for a Consultation</a>
+          <Button 
+            size="lg" 
+            className="rounded-full font-bold shadow-lg transition-transform hover:scale-105"
+            onClick={handleConsultationClick}
+          >
+            Call Now for a Consultation
           </Button>
         </div>
       </AnimateOnScroll>

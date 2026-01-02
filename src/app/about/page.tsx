@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="overflow-hidden pt-20">
+    <main className="overflow-hidden">
       <AboutHero />
       <CompanyOverview />
       <VisionMission />

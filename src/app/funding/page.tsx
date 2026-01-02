@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function FundingPage() {
   return (
-    <main className="overflow-hidden pt-20">
+    <main className="overflow-hidden">
       <FundingHero />
       <EligibilityChecker />
       <FundingSchemes />
