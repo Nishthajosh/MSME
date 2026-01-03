@@ -64,15 +64,33 @@ const registrationTypes = [
 
 export function CompanyRegistration() {
   return (
-    <section id="company-registration" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="company-registration" className="py-20 bg-white relative">
+      {/* Floating elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(12)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute text-gray-200 text-sm"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          >
+            ❄
+          </div>
+        ))}
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         <AnimateOnScroll>
           <div className="text-center mb-16">
-            <Badge variant="secondary" className="mb-4 bg-blue-100 text-blue-800">
-              Registration Services
-            </Badge>
+            <div className="inline-flex items-center gap-2 bg-blue-100 border border-blue-200 rounded-full px-4 py-2 mb-4">
+              <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+              <span className="text-blue-700 text-sm font-medium">Registration Services</span>
+            </div>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-              Company Registration
+              Company <span className="text-[#f97068]">Registration</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Start your business journey with proper legal structure. We handle all documentation and compliance.
@@ -83,16 +101,16 @@ export function CompanyRegistration() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {registrationTypes.map((type, index) => (
             <AnimateOnScroll key={type.title} delay={100 * index}>
-              <Card className={`h-full hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden ${type.popular ? 'border-2 border-orange-500' : 'border border-gray-200'}`}>
+              <Card className={`h-full hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden ${type.popular ? 'border-2 border-[#f97068]' : 'border border-gray-200 hover:border-[#f97068]/50'}`}>
                 {type.popular && (
-                  <div className="absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                  <div className="absolute top-0 right-0 bg-[#f97068] text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
                     MOST POPULAR
                   </div>
                 )}
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-4 mb-3">
-                    <div className={`p-3 rounded-xl ${type.popular ? 'bg-orange-100' : 'bg-blue-100'}`}>
-                      <type.icon className={`h-6 w-6 ${type.popular ? 'text-orange-600' : 'text-blue-600'}`} />
+                    <div className={`p-3 rounded-xl ${type.popular ? 'bg-[#f97068]/10' : 'bg-blue-100'}`}>
+                      <type.icon className={`h-6 w-6 ${type.popular ? 'text-[#f97068]' : 'text-blue-600'}`} />
                     </div>
                     <div>
                       <CardTitle className="text-lg">{type.title}</CardTitle>

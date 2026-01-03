@@ -93,17 +93,35 @@ const fundingOptions = [
 
 export function FundingSupport() {
   return (
-    <section id="funding-support" className="py-20 bg-gradient-to-br from-blue-900 via-slate-900 to-blue-900 text-white">
-      <div className="container mx-auto px-4">
+    <section id="funding-support" className="py-20 bg-white relative overflow-hidden">
+      {/* Floating elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(12)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute text-gray-200 text-sm"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          >
+            ❄
+          </div>
+        ))}
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         <AnimateOnScroll>
           <div className="text-center mb-16">
-            <Badge variant="secondary" className="mb-4 bg-green-500/20 text-green-300 border-green-500/30">
-              Funding Support
-            </Badge>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Funding & Growth Solutions
+            <div className="inline-flex items-center gap-2 bg-green-100 border border-green-200 rounded-full px-4 py-2 mb-4">
+              <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+              <span className="text-green-700 text-sm font-medium">Funding Support</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              Funding & <span className="text-[#f97068]">Growth Solutions</span>
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Access 50+ government schemes and funding options. We help you secure the right funding for your business growth.
             </p>
           </div>
@@ -112,25 +130,25 @@ export function FundingSupport() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {fundingOptions.map((option, index) => (
             <AnimateOnScroll key={option.title} delay={100 * index}>
-              <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2">
+              <Card className="h-full bg-white border border-gray-200 hover:border-[#f97068]/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-3">
-                    <div className="p-3 rounded-xl bg-green-500/20">
-                      <option.icon className="h-6 w-6 text-green-400" />
+                    <div className="p-3 rounded-xl bg-green-100">
+                      <option.icon className="h-6 w-6 text-green-600" />
                     </div>
-                    <Badge className="bg-green-500/20 text-green-300 border-0 text-xs">
+                    <Badge className="bg-[#f97068]/10 text-[#f97068] border-0 text-xs">
                       {option.highlight}
                     </Badge>
                   </div>
-                  <CardTitle className="text-xl text-white">{option.title}</CardTitle>
-                  <CardDescription className="text-gray-400">
+                  <CardTitle className="text-xl text-gray-900">{option.title}</CardTitle>
+                  <CardDescription className="text-gray-600">
                     {option.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
                     {option.schemes.map((scheme) => (
-                      <li key={scheme} className="flex items-center gap-2 text-sm text-gray-300">
+                      <li key={scheme} className="flex items-center gap-2 text-sm text-gray-700">
                         <CheckCircle2 className="h-4 w-4 text-green-400 flex-shrink-0" />
                         {scheme}
                       </li>
@@ -144,18 +162,18 @@ export function FundingSupport() {
 
         {/* CTA Section */}
         <AnimateOnScroll delay={400}>
-          <div className="mt-16 text-center">
-            <h3 className="text-2xl font-bold mb-4">Ready to Get Funded?</h3>
-            <p className="text-gray-300 mb-8 max-w-xl mx-auto">
+          <div className="mt-16 bg-gradient-to-r from-[#0f1729] to-[#1a1f3a] rounded-3xl p-10 text-center">
+            <h3 className="text-2xl font-bold mb-4 text-white">Ready to Get Funded?</h3>
+            <p className="text-gray-400 mb-8 max-w-xl mx-auto">
               Check your eligibility for 50+ funding schemes in just 2 minutes. Our experts will guide you through the entire process.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white rounded-full font-bold shadow-lg">
+              <Button asChild size="lg" className="bg-[#f97068] hover:bg-[#e85f57] text-white rounded-full font-bold shadow-lg">
                 <Link href="/funding">
                   Check Eligibility <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-full font-bold shadow-lg transition-all hover:scale-105">
+              <Button asChild size="lg" variant="outline" className="border-gray-600 text-white hover:bg-white/10 rounded-full font-bold shadow-lg transition-all hover:scale-105">
                 <Link href="/contact">
                   Talk to Expert
                 </Link>

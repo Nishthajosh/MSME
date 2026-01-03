@@ -69,15 +69,33 @@ const digitalServices = [
 
 export function DigitalMarketing() {
   return (
-    <section id="digital-marketing" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="digital-marketing" className="py-20 bg-white relative">
+      {/* Floating elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(12)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute text-gray-200 text-sm"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          >
+            ❄
+          </div>
+        ))}
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         <AnimateOnScroll>
           <div className="text-center mb-16">
-            <Badge variant="secondary" className="mb-4 bg-pink-100 text-pink-800">
-              Digital Services
-            </Badge>
+            <div className="inline-flex items-center gap-2 bg-pink-100 border border-pink-200 rounded-full px-4 py-2 mb-4">
+              <span className="w-2 h-2 bg-pink-500 rounded-full"></span>
+              <span className="text-pink-700 text-sm font-medium">Digital Services</span>
+            </div>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-              Digital Marketing & CRM
+              Digital Marketing <span className="text-[#f97068]">& CRM</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Transform your digital presence with our comprehensive marketing and technology solutions.
@@ -88,10 +106,10 @@ export function DigitalMarketing() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {digitalServices.map((service, index) => (
             <AnimateOnScroll key={service.title} delay={100 * index}>
-              <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group border border-gray-200">
+              <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group border border-gray-200 hover:border-[#f97068]/50">
                 <CardHeader className="pb-4">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-pink-50 to-purple-50 w-fit mb-3 group-hover:scale-110 transition-transform">
-                    <service.icon className="h-6 w-6 text-pink-600" />
+                  <div className="p-3 rounded-xl bg-[#f97068]/10 w-fit mb-3 group-hover:scale-110 transition-transform">
+                    <service.icon className="h-6 w-6 text-[#f97068]" />
                   </div>
                   <CardTitle className="text-lg">{service.title}</CardTitle>
                   <CardDescription className="text-gray-600 text-sm">
@@ -102,7 +120,7 @@ export function DigitalMarketing() {
                   <ul className="space-y-2">
                     {service.services.map((item) => (
                       <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
-                        <CheckCircle2 className="h-4 w-4 text-pink-500 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-[#f97068] flex-shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -122,8 +140,8 @@ export function DigitalMarketing() {
               { value: '10M+', label: 'Audience Reached', icon: Share2 },
               { value: '95%', label: 'Client Retention', icon: CheckCircle2 },
             ].map((stat, index) => (
-              <div key={stat.label} className="text-center p-6 bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl">
-                <stat.icon className="h-8 w-8 text-pink-600 mx-auto mb-3" />
+              <div key={stat.label} className="text-center p-6 bg-[#f97068]/5 border border-[#f97068]/20 rounded-2xl">
+                <stat.icon className="h-8 w-8 text-[#f97068] mx-auto mb-3" />
                 <div className="text-3xl font-bold text-gray-900">{stat.value}</div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
