@@ -259,7 +259,7 @@ export function Header() {
               </div>
             </div>
 
-            <Link href="/funding" className="flex items-center gap-2 px-4 py-2 text-gray-700 font-medium text-sm hover:text-gray-900 transition-colors">
+            <Link href="/blog" className="flex items-center gap-2 px-4 py-2 text-gray-700 font-medium text-sm hover:text-gray-900 transition-colors">
               <BookOpen className="w-4 h-4" />
               Blogs
             </Link>
