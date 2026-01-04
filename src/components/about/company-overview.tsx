@@ -2,84 +2,95 @@
 
 import { AnimateOnScroll } from '@/components/animate-on-scroll';
 import { Card, CardContent } from '@/components/ui/card';
-import { Building2, Users, Globe, Award } from 'lucide-react';
+import { Shield, CheckCircle, Lightbulb } from 'lucide-react';
 
 export function CompanyOverview() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+
+          {/* Our Purpose Component */}
           <AnimateOnScroll>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Who We Are
+            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+              <div className="w-14 h-14 bg-[#d22d2d] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-red-200">
+                <Lightbulb className="h-7 w-7 text-white" />
+              </div>
+
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                Our Purpose
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Ewolyn Services Private Limited is a comprehensive business consultancy firm dedicated to 
-                revolutionizing the Indian startup and MSME ecosystem. We provide end-to-end solutions 
-                for business registration, certification, funding, marketing, and legal compliance.
+              <p className="text-[#f97068] font-medium mb-6">
+                Making Business Growth Accessible
               </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Founded with a vision to simplify business growth in India, we have helped thousands 
-                of entrepreneurs turn their dreams into successful ventures. Our team of experts brings 
-                decades of combined experience in finance, legal, marketing, and business strategy.
+
+              <p className="text-gray-600 leading-relaxed mb-6">
+                At Ewolyn, we bridge the gap between ambitious entrepreneurs and the
+                complex world of business funding. Our mission is clear: <span className="font-bold text-gray-900">to empower 1
+                  lakh+ startups</span> by providing comprehensive advisory services that transform
+                business ideas into successful enterprises.
               </p>
-              <p className="text-lg text-gray-600">
-                We believe every entrepreneur deserves access to quality business support services, 
-                regardless of their background or resources. That&apos;s why we&apos;ve built a comprehensive 
-                platform that caters to businesses at every stage of their journey.
-              </p>
+
+              <div className="grid grid-cols-2 gap-6 mt-8">
+                <div>
+                  <div className="flex items-center gap-2 mb-1 text-gray-900 font-semibold">
+                    <Shield className="w-4 h-4 text-[#f97068]" />
+                    <span>Founded</span>
+                  </div>
+                  <p className="text-sm text-gray-500 ml-6">December 2023</p>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-1 text-gray-900 font-semibold">
+                    <Shield className="w-4 h-4 text-[#f97068]" />
+                    <span>Headquarters</span>
+                  </div>
+                  <p className="text-sm text-gray-500 ml-6">B-304/2 Gopal Palace, Ahmedabad-380015</p>
+                </div>
+              </div>
             </div>
           </AnimateOnScroll>
 
+          {/* What Makes Us Different */}
           <AnimateOnScroll delay={200}>
-            <div className="grid grid-cols-2 gap-6">
-              {[
-                {
-                  icon: Building2,
-                  title: 'Established Presence',
-                  description: 'Multiple offices across Gujarat, Maharashtra, UP, and West Bengal',
-                  color: 'blue',
-                },
-                {
-                  icon: Users,
-                  title: 'Expert Team',
-                  description: 'Qualified professionals in finance, legal, and business advisory',
-                  color: 'green',
-                },
-                {
-                  icon: Globe,
-                  title: 'Pan-India Reach',
-                  description: 'Serving clients across 28+ states and union territories',
-                  color: 'purple',
-                },
-                {
-                  icon: Award,
-                  title: 'Trusted Partner',
-                  description: 'Recognized by DPIIT, ISO certified, and GeM registered',
-                  color: 'orange',
-                },
-              ].map((item, index) => {
-                const colorClasses: Record<string, string> = {
-                  blue: 'bg-blue-100 text-blue-600',
-                  green: 'bg-green-100 text-green-600',
-                  purple: 'bg-purple-100 text-purple-600',
-                  orange: 'bg-orange-100 text-orange-600',
-                };
-                return (
-                  <Card key={item.title} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <CardContent className="p-6">
-                      <div className={`w-12 h-12 rounded-xl ${colorClasses[item.color]} flex items-center justify-center mb-4`}>
-                        <item.icon className="h-6 w-6" />
+            <div className="bg-gray-100/50 rounded-3xl p-8 md:p-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-8">
+                What Makes Us Different
+              </h2>
+
+              <div className="space-y-8">
+                {[
+                  {
+                    title: "Advisory, Not Lending",
+                    desc: "We guide and facilitate; banks and NBFCs provide the actual funding",
+                    icon: Shield
+                  },
+                  {
+                    title: "DPIIT Recognized",
+                    desc: "Official startup consultant with government recognition",
+                    icon: CheckCircle
+                  },
+                  {
+                    title: "End-to-End Support",
+                    desc: "From ideation to funding, complete business lifecycle assistance",
+                    icon: CheckCircle
+                  }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#d22d2d]">
+                        <item.icon className="w-4 h-4" />
                       </div>
-                      <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                      <p className="text-sm text-gray-600">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                );
-              })}
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </AnimateOnScroll>
+
         </div>
       </div>
     </section>

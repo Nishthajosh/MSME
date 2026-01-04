@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 import { AboutHero } from '@/components/about/about-hero';
 import { CompanyOverview } from '@/components/about/company-overview';
 import { VisionMission } from '@/components/about/vision-mission';
-import { CoFounderModel } from '@/components/about/co-founder-model';
 import { WhyChooseUs } from '@/components/about/why-choose-us';
-import { TeamValues } from '@/components/about/team-values';
+import { ImportantNotice } from '@/components/about/important-notice';
 
 export const metadata: Metadata = {
   title: 'About Us | Ewolyn - Empowering Indian Startups & MSMEs',
@@ -14,13 +13,13 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-white">
       <AboutHero />
       <CompanyOverview />
       <VisionMission />
-      <CoFounderModel />
       <WhyChooseUs />
-      <TeamValues />
+      <ImportantNotice />
+      {/* <TeamValues /> - Content integrated into VisionMission */}
     </main>
   );
 }

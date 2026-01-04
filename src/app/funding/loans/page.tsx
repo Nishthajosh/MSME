@@ -1,10 +1,10 @@
 'use client';
 
-import { 
-  Sparkles, 
-  Target, 
-  Shield, 
-  Zap, 
+import {
+  Sparkles,
+  Target,
+  Shield,
+  Zap,
   Award,
   Building,
   CreditCard,
@@ -242,8 +242,8 @@ export default function LoansPage() {
 
           {/* Description */}
           <p className="text-gray-400 text-center max-w-3xl mx-auto mb-12 text-lg">
-            Access optimal business financing with Ewolyn's specialized loan advisory services covering 
-            bank loans, NBFC financing, government schemes, and specialized credit products with end-to-end 
+            Access optimal business financing with Ewolyn's specialized loan advisory services covering
+            bank loans, NBFC financing, government schemes, and specialized credit products with end-to-end
             support from application to disbursement.
           </p>
 
@@ -268,22 +268,22 @@ export default function LoansPage() {
               <Badge className="bg-[#fff0f0] text-[#f97068] border-0 px-4 py-1.5 text-sm font-medium mb-6">
                 Overview
               </Badge>
-              
+
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Business Loan Solutions for Every Need
               </h2>
 
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Business loans provide essential capital for growth initiatives, operational 
-                requirements, and strategic investments. From short-term working capital to long-term 
-                expansion financing, the right debt capital at the right time accelerates business 
+                Business loans provide essential capital for growth initiatives, operational
+                requirements, and strategic investments. From short-term working capital to long-term
+                expansion financing, the right debt capital at the right time accelerates business
                 development while preserving ownership and control.
               </p>
 
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Ewolyn specializes in connecting businesses with optimal financing solutions based 
-                on their specific needs, financial profile, and growth stage. Our expertise spans 
-                traditional banking, NBFC partnerships, government schemes, and specialized financing 
+                Ewolyn specializes in connecting businesses with optimal financing solutions based
+                on their specific needs, financial profile, and growth stage. Our expertise spans
+                traditional banking, NBFC partnerships, government schemes, and specialized financing
                 options, ensuring you receive the most favorable terms and efficient processing.
               </p>
 
@@ -301,21 +301,19 @@ export default function LoansPage() {
             {/* Right - Feature Cards */}
             <div className="grid grid-cols-2 gap-4">
               {featureCards.map((card, index) => (
-                <div 
-                  key={index} 
-                  className={`p-8 rounded-2xl ${
-                    index === 0 ? 'bg-red-50' : 
-                    index === 1 ? 'bg-blue-50' : 
-                    index === 2 ? 'bg-green-50' : 
-                    'bg-orange-50'
-                  }`}
+                <div
+                  key={index}
+                  className={`p-8 rounded-2xl ${index === 0 ? 'bg-red-50' :
+                      index === 1 ? 'bg-blue-50' :
+                        index === 2 ? 'bg-green-50' :
+                          'bg-orange-50'
+                    }`}
                 >
-                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 ${
-                    index === 0 ? 'bg-white text-red-500' : 
-                    index === 1 ? 'bg-white text-blue-500' : 
-                    index === 2 ? 'bg-white text-green-500' : 
-                    'bg-white text-orange-500'
-                  }`}>
+                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 ${index === 0 ? 'bg-white text-red-500' :
+                      index === 1 ? 'bg-white text-blue-500' :
+                        index === 2 ? 'bg-white text-green-500' :
+                          'bg-white text-orange-500'
+                    }`}>
                     <card.icon className="w-7 h-7" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900">{card.label}</h3>
@@ -340,8 +338,8 @@ export default function LoansPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {loanServices.map((service, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg hover:border-[#f97068]/20 transition-all duration-300"
               >
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${service.color}`}>
@@ -411,8 +409,8 @@ export default function LoansPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
             {processSteps.slice(0, 4).map((step, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#f97068]/30 transition-colors relative"
               >
                 <div className="w-12 h-12 rounded-full bg-[#f97068] text-white flex items-center justify-center text-xl font-bold mb-4">
@@ -431,8 +429,8 @@ export default function LoansPage() {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {processSteps.slice(4).map((step, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#f97068]/30 transition-colors"
               >
                 <div className="w-12 h-12 rounded-full bg-[#f97068] text-white flex items-center justify-center text-xl font-bold mb-4">
@@ -510,8 +508,8 @@ export default function LoansPage() {
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
+                <AccordionItem
+                  key={index}
                   value={`item-${index}`}
                   className="bg-white rounded-xl border-0 overflow-hidden"
                 >
@@ -543,7 +541,7 @@ export default function LoansPage() {
             </h2>
 
             <p className="text-gray-400 max-w-2xl mx-auto mb-8 text-lg">
-              Connect with our loan specialists to identify optimal financing options, 
+              Connect with our loan specialists to identify optimal financing options,
               assess your eligibility, and navigate the application process for successful funding.
             </p>
 
@@ -574,9 +572,9 @@ export default function LoansPage() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-gray-600 text-white hover:bg-white/10 rounded-full px-8">
-                <a href="tel:7777941611">
+                <a href="tel:9737799937">
                   <Phone className="w-4 h-4 mr-2" />
-                  Call: +91 77779 41611
+                  Call: +91 97377 99937
                 </a>
               </Button>
             </div>

@@ -15,14 +15,14 @@ export function ContactInfo() {
             </h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
               <Button asChild size="lg" className="h-auto py-6 flex-col gap-2 bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700">
-                <a href="tel:7777941611">
+                <a href="tel:9737799937">
                   <Phone className="h-8 w-8" />
                   <span className="text-lg font-bold">Call Now</span>
-                  <span className="text-sm opacity-80">+91 77779 41611</span>
+                  <span className="text-sm opacity-80">+91 97377 99937</span>
                 </a>
               </Button>
               <Button asChild size="lg" className="h-auto py-6 flex-col gap-2 bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700">
-                <a href="https://wa.me/917777941611" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/919737799937" target="_blank" rel="noopener noreferrer">
                   <MessageSquare className="h-8 w-8" />
                   <span className="text-lg font-bold">WhatsApp</span>
                   <span className="text-sm opacity-80">Chat with us</span>
@@ -50,9 +50,9 @@ export function ContactInfo() {
         <AnimateOnScroll delay={300}>
           <div className="mt-16 p-6 bg-slate-100 rounded-2xl max-w-4xl mx-auto">
             <p className="text-sm text-gray-600 text-center">
-              <strong>Disclaimer:</strong> Ewolyn is a business consultancy and service provider. 
-              We are not a government body. All information provided is for guidance and informational 
-              purposes only. Actual requirements or procedures may vary depending on the concerned 
+              <strong>Disclaimer:</strong> Ewolyn is a business consultancy and service provider.
+              We are not a government body. All information provided is for guidance and informational
+              purposes only. Actual requirements or procedures may vary depending on the concerned
               approving authority.
             </p>
           </div>

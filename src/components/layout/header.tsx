@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { MainNav } from './main-nav';
 import { EwolynLogo } from '../ewolyn-logo';
-import { 
-  Phone, 
-  ExternalLink, 
-  Home, 
-  Building2, 
-  BookOpen, 
-  Users, 
+import {
+  Phone,
+  ExternalLink,
+  Home,
+  Building2,
+  BookOpen,
+  Users,
   Mail,
   DollarSign,
   FileText,
@@ -110,7 +110,7 @@ export function Header() {
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -140,9 +140,9 @@ export function Header() {
               <ExternalLink className="w-3 h-3" />
               Track Application
             </a>
-            <a href="tel:7777941611" className="text-white hover:text-white/90 transition-colors flex items-center gap-1 font-medium">
+            <a href="tel:9737799937" className="text-white hover:text-white/90 transition-colors flex items-center gap-1 font-medium">
               <Phone className="w-3 h-3" />
-              +91 77779 41611
+              +91 97377 99937
             </a>
             <span className="w-2 h-2 bg-white/50 rounded-full"></span>
           </div>
@@ -150,12 +150,11 @@ export function Header() {
       </div>
 
       {/* Main Header - White */}
-      <header 
-        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled 
-            ? 'bg-white shadow-lg' 
+      <header
+        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+            ? 'bg-white shadow-lg'
             : 'bg-white shadow-md'
-        }`}
+          }`}
       >
         <div className="container mx-auto px-4 flex justify-between items-center h-16">
           <Link href="/" className="flex items-center gap-2">
@@ -168,9 +167,9 @@ export function Header() {
               <Home className="w-4 h-4" />
               Home
             </Link>
-            
+
             {/* Services Dropdown */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
@@ -180,24 +179,23 @@ export function Header() {
                 Services
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
               </button>
-              
+
               {/* Dropdown Menu */}
-              <div 
-                className={`absolute top-full left-0 mt-1 w-[480px] bg-white rounded-xl shadow-2xl border border-gray-100 transition-all duration-200 ${
-                  servicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
-                }`}
+              <div
+                className={`absolute top-full left-0 mt-1 w-[480px] bg-white rounded-xl shadow-2xl border border-gray-100 transition-all duration-200 ${servicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+                  }`}
               >
                 {/* Header */}
                 <div className="px-5 py-4 border-b border-gray-100">
                   <h3 className="font-semibold text-gray-900">Our Services</h3>
                   <p className="text-sm text-gray-500">Comprehensive solutions for your business growth</p>
                 </div>
-                
+
                 {/* Service Items */}
                 <div className="p-3">
                   {/* Business Funding - Expandable */}
                   <div className="mb-2">
-                    <button 
+                    <button
                       onClick={() => setFundingExpanded(!fundingExpanded)}
                       className="w-full flex items-center gap-4 p-3 rounded-lg bg-[#fff5f5] hover:bg-[#ffecec] transition-colors"
                     >
@@ -214,7 +212,7 @@ export function Header() {
                         <ChevronDown className="w-5 h-5 text-gray-400" />
                       )}
                     </button>
-                    
+
                     {/* Sub-items */}
                     <div className={`overflow-hidden transition-all duration-300 ${fundingExpanded ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
                       <div className="flex gap-2 pl-4">
@@ -236,7 +234,7 @@ export function Header() {
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Other Items Grid */}
                   <div className="grid grid-cols-2 gap-1">
                     {serviceItems.map((item, index) => (
@@ -259,7 +257,7 @@ export function Header() {
               </div>
             </div>
 
-            <Link href="/funding" className="flex items-center gap-2 px-4 py-2 text-gray-700 font-medium text-sm hover:text-gray-900 transition-colors">
+            <Link href="/blog" className="flex items-center gap-2 px-4 py-2 text-gray-700 font-medium text-sm hover:text-gray-900 transition-colors">
               <BookOpen className="w-4 h-4" />
               Blogs
             </Link>

@@ -2,99 +2,128 @@
 
 import { AnimateOnScroll } from '@/components/animate-on-scroll';
 import { Card, CardContent } from '@/components/ui/card';
-import { 
-  Clock, 
-  Shield, 
-  Users, 
-  Headphones, 
-  Award, 
-  IndianRupee,
-  CheckCircle2
+import {
+  Users,
+  TrendingUp,
+  Award,
+  Building2,
+  Star
 } from 'lucide-react';
-
-const reasons = [
-  {
-    title: 'Expert Team',
-    description: 'Qualified professionals with deep expertise in registration, compliance, funding, and business growth.',
-    icon: Users,
-  },
-  {
-    title: 'Quick Turnaround',
-    description: 'Efficient processes ensuring fast delivery of services without compromising quality.',
-    icon: Clock,
-  },
-  {
-    title: 'Transparent Pricing',
-    description: 'No hidden charges. Clear pricing structure with complete breakdown of costs.',
-    icon: IndianRupee,
-  },
-  {
-    title: 'End-to-End Support',
-    description: 'From application to approval, we handle everything so you can focus on your business.',
-    icon: Shield,
-  },
-  {
-    title: '95% Success Rate',
-    description: 'Proven track record with thousands of successful registrations, certifications, and funding applications.',
-    icon: Award,
-  },
-  {
-    title: 'Dedicated Support',
-    description: 'Personal account manager and responsive support team available 6 days a week.',
-    icon: Headphones,
-  },
-];
 
 export function WhyChooseUs() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-[#111827] text-white">
       <div className="container mx-auto px-4">
         <AnimateOnScroll>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Ewolyn?
+          <div className="mb-16">
+            <Badge className="mb-6 bg-slate-800 text-slate-300 border-slate-700 px-4 py-1.5 text-sm font-medium rounded-full">
+              Est. 2023 • Our Story
+            </Badge>
+
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 pt-2">
+              Empowering India&apos;s <br />
+              <span className="text-[#f97068]">MSME Ecosystem</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Your success is our commitment. Here&apos;s what sets us apart.
+
+            <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
+              From business registration to funding facilitation, we&apos;re transforming how
+              startups and MSMEs access growth capital across India. <br />
+              <span className="text-white mt-2 block font-medium">आपकी सफलता, हमारी ज़िम्मेदारी</span>
             </p>
+
+            <div className="flex flex-wrap gap-3 mt-8">
+              {['DPIIT Recognized Startup Consultant', 'End-to-End Business Solutions', 'Government Scheme Specialists'].map(tag => (
+                <div key={tag} className="flex items-center gap-2 bg-slate-800/50 rounded-full px-4 py-2 border border-slate-700 text-sm text-slate-300">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  {tag}
+                </div>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-8 mt-12 text-sm text-gray-400">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" /> Ahmedabad, Gujarat
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4" /> Founded 2024
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <Button className="bg-[#d22d2d] hover:bg-[#b02222] text-white px-8 py-6 rounded-lg text-lg">
+                Partner With Us <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button variant="outline" className="ml-4 border-slate-700 text-white hover:bg-slate-800 h-[60px] px-8 text-lg">
+                Get In Touch
+              </Button>
+            </div>
           </div>
         </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reasons.map((reason, index) => (
-            <AnimateOnScroll key={reason.title} delay={100 * index}>
-              <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl flex items-center justify-center mb-4">
-                    <reason.icon className="h-7 w-7 text-orange-600" />
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            {
+              value: "20,000+",
+              label: "MSMEs Assisted",
+              icon: Users,
+              color: "bg-emerald-500",
+              bgColor: "bg-emerald-500/10 text-emerald-500"
+            },
+            {
+              value: "₹500Cr+",
+              label: "Funding Facilitated",
+              icon: TrendingUp,
+              color: "bg-blue-500",
+              bgColor: "bg-blue-500/10 text-blue-500"
+            },
+            {
+              value: "95%",
+              label: "Success Rate",
+              icon: Award,
+              color: "bg-purple-500",
+              bgColor: "bg-purple-500/10 text-purple-500"
+            },
+            {
+              value: "50+",
+              label: "Schemes Covered",
+              icon: Building2,
+              color: "bg-orange-500",
+              bgColor: "bg-orange-500/10 text-orange-500"
+            }
+          ].map((stat, index) => (
+            <AnimateOnScroll key={index} delay={index * 100}>
+              <Card className="bg-[#1f2937] border-slate-800 h-full p-6 hover:bg-[#253042] transition-colors">
+                <CardContent className="p-0 flex items-start justify-between">
+                  <div>
+                    <div className={`w-12 h-12 rounded-lg ${stat.bgColor} flex items-center justify-center mb-4`}>
+                      <stat.icon className="w-6 h-6" />
+                    </div>
+                    <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                    <div className="text-gray-400 font-medium">{stat.label}</div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{reason.title}</h3>
-                  <p className="text-gray-600">{reason.description}</p>
                 </CardContent>
               </Card>
             </AnimateOnScroll>
           ))}
-        </div>
 
-        {/* Trust Indicators */}
-        <AnimateOnScroll delay={400}>
-          <div className="mt-16 p-8 bg-slate-50 rounded-3xl">
-            <div className="grid md:grid-cols-4 gap-8 text-center">
-              {[
-                { value: '50,000+', label: 'Businesses Served' },
-                { value: '₹50Cr+', label: 'Funding Facilitated' },
-                { value: '95%', label: 'Success Rate' },
-                { value: '4.8/5', label: 'Client Rating' },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-3xl md:text-4xl font-bold text-gray-900">{stat.value}</div>
-                  <div className="text-gray-600">{stat.label}</div>
-                </div>
-              ))}
+          <div className="md:col-span-2 pt-6">
+            <div className="bg-[#1f2937] border border-slate-800 rounded-2xl p-6 flex items-center gap-4">
+              <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shrink-0">
+                <Star className="w-6 h-6 text-white" fill="white" />
+              </div>
+              <div>
+                <h4 className="text-white font-bold text-lg">Leading MSME Advisory</h4>
+                <p className="text-gray-400 text-sm">Trusted by entrepreneurs across 15+ states for business growth solutions</p>
+              </div>
             </div>
           </div>
-        </AnimateOnScroll>
+
+        </div>
       </div>
     </section>
   );
 }
+
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { CheckCircle, MapPin, Clock, ArrowRight } from 'lucide-react';

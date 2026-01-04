@@ -27,7 +27,7 @@ const initialBotMessages = [
   "🚀 We offer end-to-end support for Startup Registration, Tax Exemptions, Digital Marketing, Govt. Schemes & Specialized Funding.",
   "🎯 Looking for services like Private Limited Company Registration, ISO Certification, or Udyam Certificate?",
   "💬 Just type your query below, and one of our advisors will guide you!",
-  "📞 Or call us directly at +91 77779 41611 or 📧 email: info.ewolyn@gmail.com"
+  "📞 Or call us directly at +91 97377 99937 or 📧 email: info.ewolyn@gmail.com"
 ];
 
 
@@ -43,7 +43,7 @@ export function AiAssistant() {
       // Clear messages and show initial bot messages when dialog opens
       setMessages([]);
       let currentMessageIndex = 0;
-      
+
       const displayNextMessage = () => {
         if (currentMessageIndex < initialBotMessages.length) {
           const nextMessage: Message = {
@@ -55,7 +55,7 @@ export function AiAssistant() {
           setTimeout(displayNextMessage, 1500); // 1.5 second delay between messages
         }
       };
-      
+
       // Start displaying messages
       const timer = setTimeout(displayNextMessage, 500);
 
@@ -86,7 +86,7 @@ export function AiAssistant() {
     setTimeout(() => {
       const assistantMessage: Message = {
         role: "assistant",
-        content: "Thank you for your message! An Ewolyn advisor will get back to you shortly. For immediate assistance, please call us at +91 77779 41611.",
+        content: "Thank you for your message! An Ewolyn advisor will get back to you shortly. For immediate assistance, please call us at +91 97377 99937.",
       };
       setMessages((prev) => [...prev, assistantMessage]);
       setIsLoading(false);
@@ -127,7 +127,7 @@ export function AiAssistant() {
                 >
                   {message.role === "assistant" && (
                     <Avatar className="h-8 w-8">
-                      <AvatarFallback><Bot size={20}/></AvatarFallback>
+                      <AvatarFallback><Bot size={20} /></AvatarFallback>
                     </Avatar>
                   )}
                   <div
@@ -140,30 +140,30 @@ export function AiAssistant() {
                   >
                     {message.content.includes("info.ewolyn@gmail.com") ? (
                       <span>
-                        📞 Or call us directly at +91 77779 41611 or 📧 email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info.ewolyn@gmail.com" target="_blank" rel="noopener noreferrer" className="underline">info.ewolyn@gmail.com</a>
+                        📞 Or call us directly at +91 97377 99937 or 📧 email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info.ewolyn@gmail.com" target="_blank" rel="noopener noreferrer" className="underline">info.ewolyn@gmail.com</a>
                       </span>
                     ) : message.content}
                   </div>
                   {message.role === "user" && (
-                     <Avatar className="h-8 w-8">
-                      <AvatarFallback><User size={20}/></AvatarFallback>
+                    <Avatar className="h-8 w-8">
+                      <AvatarFallback><User size={20} /></AvatarFallback>
                     </Avatar>
                   )}
                 </div>
               ))}
               {isLoading && (
-                 <div className="flex items-start gap-3 justify-start">
-                    <Avatar className="h-8 w-8">
-                      <AvatarFallback><Bot size={20}/></AvatarFallback>
-                    </Avatar>
-                    <div className="rounded-lg px-4 py-2 max-w-[80%] bg-muted flex items-center">
-                        <Loader2 className="h-5 w-5 animate-spin"/>
-                    </div>
+                <div className="flex items-start gap-3 justify-start">
+                  <Avatar className="h-8 w-8">
+                    <AvatarFallback><Bot size={20} /></AvatarFallback>
+                  </Avatar>
+                  <div className="rounded-lg px-4 py-2 max-w-[80%] bg-muted flex items-center">
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                  </div>
                 </div>
               )}
             </div>
           </ScrollArea>
-          
+
           <DialogFooter className="p-4 border-t">
             <form onSubmit={handleSubmit} className="flex w-full items-center gap-2">
               <Input

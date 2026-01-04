@@ -1,10 +1,10 @@
 'use client';
 
-import { 
-  Sparkles, 
-  Target, 
-  Shield, 
-  Zap, 
+import {
+  Sparkles,
+  Target,
+  Shield,
+  Zap,
   Award,
   Search,
   Filter,
@@ -241,9 +241,9 @@ export default function GrantsPage() {
 
           {/* Description */}
           <p className="text-gray-400 text-center max-w-3xl mx-auto mb-12 text-lg">
-            Access non-repayable government funding with Ewolyn's specialized grants consultancy 
-            services covering scheme identification, eligibility assessment, application development, 
-            documentation support, and follow-up to maximize your chances of securing government 
+            Access non-repayable government funding with Ewolyn's specialized grants consultancy
+            services covering scheme identification, eligibility assessment, application development,
+            documentation support, and follow-up to maximize your chances of securing government
             financial assistance.
           </p>
 
@@ -268,22 +268,22 @@ export default function GrantsPage() {
               <Badge className="bg-[#fff0f0] text-[#f97068] border-0 px-4 py-1.5 text-sm font-medium mb-6">
                 Overview
               </Badge>
-              
+
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Unlock Government Funding for Your Business
               </h2>
 
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Government grants represent a valuable source of non-repayable funding that can 
-                significantly accelerate business growth without creating debt obligations. From 
-                startup subsidies and R&D support to manufacturing incentives and export promotion, 
+                Government grants represent a valuable source of non-repayable funding that can
+                significantly accelerate business growth without creating debt obligations. From
+                startup subsidies and R&D support to manufacturing incentives and export promotion,
                 various government schemes provide financial assistance to eligible businesses across sectors.
               </p>
 
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Ewolyn specializes in connecting MSMEs and startups with suitable government 
-                grant schemes, navigating the complex application processes, and developing 
-                compelling proposals that align with scheme objectives. Our expertise improves 
+                Ewolyn specializes in connecting MSMEs and startups with suitable government
+                grant schemes, navigating the complex application processes, and developing
+                compelling proposals that align with scheme objectives. Our expertise improves
                 your approval chances while ensuring compliance with all grant terms and conditions.
               </p>
 
@@ -301,21 +301,19 @@ export default function GrantsPage() {
             {/* Right - Feature Cards */}
             <div className="grid grid-cols-2 gap-4">
               {featureCards.map((card, index) => (
-                <div 
-                  key={index} 
-                  className={`p-8 rounded-2xl ${
-                    index === 0 ? 'bg-red-50' : 
-                    index === 1 ? 'bg-blue-50' : 
-                    index === 2 ? 'bg-green-50' : 
-                    'bg-orange-50'
-                  }`}
+                <div
+                  key={index}
+                  className={`p-8 rounded-2xl ${index === 0 ? 'bg-red-50' :
+                      index === 1 ? 'bg-blue-50' :
+                        index === 2 ? 'bg-green-50' :
+                          'bg-orange-50'
+                    }`}
                 >
-                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 ${
-                    index === 0 ? 'bg-white text-red-500' : 
-                    index === 1 ? 'bg-white text-blue-500' : 
-                    index === 2 ? 'bg-white text-green-500' : 
-                    'bg-white text-orange-500'
-                  }`}>
+                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 ${index === 0 ? 'bg-white text-red-500' :
+                      index === 1 ? 'bg-white text-blue-500' :
+                        index === 2 ? 'bg-white text-green-500' :
+                          'bg-white text-orange-500'
+                    }`}>
                     <card.icon className="w-7 h-7" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900">{card.label}</h3>
@@ -340,8 +338,8 @@ export default function GrantsPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg hover:border-[#f97068]/20 transition-all duration-300"
               >
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${service.color}`}>
@@ -411,8 +409,8 @@ export default function GrantsPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
             {processSteps.slice(0, 4).map((step, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#f97068]/30 transition-colors relative"
               >
                 <div className="w-12 h-12 rounded-full bg-[#f97068] text-white flex items-center justify-center text-xl font-bold mb-4">
@@ -431,8 +429,8 @@ export default function GrantsPage() {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {processSteps.slice(4).map((step, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#f97068]/30 transition-colors"
               >
                 <div className="w-12 h-12 rounded-full bg-[#f97068] text-white flex items-center justify-center text-xl font-bold mb-4">
@@ -510,8 +508,8 @@ export default function GrantsPage() {
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
+                <AccordionItem
+                  key={index}
                   value={`item-${index}`}
                   className="bg-white rounded-xl border-0 overflow-hidden"
                 >
@@ -543,8 +541,8 @@ export default function GrantsPage() {
             </h2>
 
             <p className="text-gray-400 max-w-2xl mx-auto mb-8 text-lg">
-              Connect with our grants specialists to identify available schemes, assess 
-              your eligibility, and develop compelling applications to secure non-repayable 
+              Connect with our grants specialists to identify available schemes, assess
+              your eligibility, and develop compelling applications to secure non-repayable
               funding for your business growth.
             </p>
 
@@ -575,9 +573,9 @@ export default function GrantsPage() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-gray-600 text-white hover:bg-white/10 rounded-full px-8">
-                <a href="tel:7777941611">
+                <a href="tel:9737799937">
                   <Phone className="w-4 h-4 mr-2" />
-                  Call: +91 77779 41611
+                  Call: +91 97377 99937
                 </a>
               </Button>
             </div>

@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 import { format } from 'date-fns';
 
 const timeSlots = [
-  "10:00 AM", "11:00 AM", "12:00 PM", 
+  "10:00 AM", "11:00 AM", "12:00 PM",
   "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM"
 ];
 
@@ -33,12 +33,12 @@ export function BookConsultation({ children }: { children: React.ReactNode }) {
     }
     const formattedDate = format(date, "PPP"); // e.g., "Jun 20, 2024"
     const message = `Hello Ewolyn, I would like to book a consultation on ${formattedDate} at ${selectedTime}. Thank you.`;
-    const whatsappUrl = `https://wa.me/917777941611?text=${encodeURIComponent(message)}`;
-    
+    const whatsappUrl = `https://wa.me/919737799937?text=${encodeURIComponent(message)}`;
+
     window.open(whatsappUrl, '_blank');
     setIsOpen(false);
   };
-  
+
   const isDateInPast = (d: Date) => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -86,7 +86,7 @@ export function BookConsultation({ children }: { children: React.ReactNode }) {
         </div>
 
         <DialogFooter>
-          <Button 
+          <Button
             onClick={handleSchedule}
             disabled={!date || !selectedTime}
           >

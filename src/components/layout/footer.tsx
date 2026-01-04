@@ -61,7 +61,7 @@ export function Footer() {
   useEffect(() => {
     setIsClient(true);
   }, []);
-  
+
   if (!isClient) {
     return null;
   }
@@ -157,9 +157,9 @@ export function Footer() {
               <h3 className="font-semibold text-lg mb-4 text-white">Contact Us</h3>
               <ul className="space-y-3">
                 <li>
-                  <a href="tel:7777941611" className="flex items-center gap-2 text-gray-400 hover:text-[#f97068] transition-colors">
+                  <a href="tel:9737799937" className="flex items-center gap-2 text-gray-400 hover:text-[#f97068] transition-colors">
                     <Phone className="h-4 w-4" />
-                    <span>+91 77779 41611</span>
+                    <span>+91 97377 99937</span>
                   </a>
                 </li>
                 <li>
@@ -170,7 +170,7 @@ export function Footer() {
                 </li>
                 <li className="flex items-start gap-2 text-gray-400">
                   <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                  <span className="text-sm">Your Office Address Here, City, State - PIN</span>
+                  <span className="text-sm">B-304/2 Gopal Palace, Near Shiromani Complex, opposite Ocean Park, Nehru Nagar, Ahmedabad-380015</span>
                 </li>
               </ul>
             </div>
@@ -205,17 +205,17 @@ export function Footer() {
       {/* Fixed Bottom Buttons */}
       <div className="fixed bottom-6 left-6 z-40 hidden md:block">
         <BookConsultation>
-            <Button className="rounded-full font-bold shadow-2xl h-14 bg-[#f97068] hover:bg-[#e85f57]" size="lg">
-                <CalendarPlus className="mr-2 h-5 w-5"/>
-                Book Consultation
-            </Button>
+          <Button className="rounded-full font-bold shadow-2xl h-14 bg-[#f97068] hover:bg-[#e85f57]" size="lg">
+            <CalendarPlus className="mr-2 h-5 w-5" />
+            Book Consultation
+          </Button>
         </BookConsultation>
       </div>
       <div className="fixed bottom-6 right-24 z-40 hidden md:block">
         <Button asChild size="icon" className="rounded-full h-14 w-14 shadow-2xl bg-green-500 hover:bg-green-600">
-            <a href="tel:7777941611">
-                <Phone className="h-6 w-6"/>
-            </a>
+          <a href="tel:9737799937">
+            <Phone className="h-6 w-6" />
+          </a>
         </Button>
       </div>
       <ScrollToTopButton />

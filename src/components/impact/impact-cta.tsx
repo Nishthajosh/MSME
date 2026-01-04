@@ -24,9 +24,9 @@ export function ImpactCTA() {
                 </Link>
               </Button>
               <Button asChild size="lg" className="bg-white text-emerald-600 hover:bg-emerald-50 rounded-full font-bold shadow-lg transition-all hover:scale-105">
-                <a href="tel:7777941611">
+                <a href="tel:9737799937">
                   <Phone className="mr-2 h-5 w-5" />
-                  Call: +91 77779 41611
+                  Call: +91 97377 99937
                 </a>
               </Button>
             </div>

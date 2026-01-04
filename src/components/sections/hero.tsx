@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import { AnimateOnScroll } from '../animate-on-scroll';
@@ -13,29 +14,42 @@ const heroStats = [
 ];
 
 // Floating snowflake/sparkle component
-const FloatingElements = () => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    {[...Array(20)].map((_, i) => (
-      <div
-        key={i}
-        className="absolute text-blue-300/30 animate-float"
-        style={{
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          animationDelay: `${Math.random() * 5}s`,
-          animationDuration: `${3 + Math.random() * 4}s`,
-        }}
-      >
-        ❄
-      </div>
-    ))}
-    {/* Colored sparkles */}
-    <div className="absolute top-20 right-1/4 text-yellow-400 text-2xl animate-pulse">✨</div>
-    <div className="absolute top-1/3 left-10 text-pink-400 text-xl animate-pulse delay-100">✨</div>
-    <div className="absolute bottom-1/4 right-20 text-orange-400 text-xl animate-pulse delay-300">🎁</div>
-    <div className="absolute top-1/2 right-1/3 text-red-400 text-lg animate-bounce">🎄</div>
-  </div>
-);
+const FloatingElements = () => {
+  const [elements, setElements] = useState<Array<{ left: string, top: string, delay: string, duration: string }>>([]);
+
+  useEffect(() => {
+    setElements([...Array(20)].map(() => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      delay: `${Math.random() * 5}s`,
+      duration: `${3 + Math.random() * 4}s`,
+    })));
+  }, []);
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {elements.map((style, i) => (
+        <div
+          key={i}
+          className="absolute text-blue-300/30 animate-float"
+          style={{
+            left: style.left,
+            top: style.top,
+            animationDelay: style.delay,
+            animationDuration: style.duration,
+          }}
+        >
+          ❄
+        </div>
+      ))}
+      {/* Colored sparkles */}
+      <div className="absolute top-20 right-1/4 text-yellow-400 text-2xl animate-pulse">✨</div>
+      <div className="absolute top-1/3 left-10 text-pink-400 text-xl animate-pulse delay-100">✨</div>
+      <div className="absolute bottom-1/4 right-20 text-orange-400 text-xl animate-pulse delay-300">🎁</div>
+      <div className="absolute top-1/2 right-1/3 text-red-400 text-lg animate-bounce">🎄</div>
+    </div>
+  );
+};
 
 export function Hero() {
   return (
@@ -52,7 +66,7 @@ export function Hero() {
                 <span className="text-green-300 text-sm font-medium">Trusted by 20,000+ MSMEs</span>
               </div>
             </AnimateOnScroll>
-            
+
             <AnimateOnScroll startVisible delay={100}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-2 leading-tight">
                 Your Business Deserves
@@ -62,13 +76,13 @@ export function Hero() {
                 <span className="text-white">, Not Rejection</span>
               </h1>
             </AnimateOnScroll>
-            
+
             <AnimateOnScroll startVisible delay={200}>
               <p className="text-xl md:text-2xl font-semibold text-white/80 mb-4">
                 आपकी सफलता, हमारी ज़िम्मेदारी
               </p>
             </AnimateOnScroll>
-            
+
             <AnimateOnScroll startVisible delay={300}>
               <p className="text-lg text-gray-400 mb-8 max-w-xl">
                 Get ₹5 Lakhs to ₹10 Crores with India's fastest MSME funding platform
@@ -129,8 +143,8 @@ export function Hero() {
                 Get instant funding options in 30 seconds
                 <span className="text-yellow-400">✨</span>
               </p>
-              
-              <form className="space-y-5">
+
+              <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); window.location.href = '/funding'; }}>
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Business Type</label>
                   <select className="w-full bg-[#2a3352] border border-gray-600 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#f97068] focus:border-transparent">
@@ -141,7 +155,7 @@ export function Hero() {
                     <option value="agriculture">Agriculture</option>
                   </select>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Funding Required</label>
                   <select className="w-full bg-[#2a3352] border border-gray-600 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#f97068] focus:border-transparent">
@@ -153,7 +167,7 @@ export function Hero() {
                     <option value="1cr+">₹1Cr+</option>
                   </select>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Business Stage</label>
                   <div className="grid grid-cols-3 gap-3">
@@ -161,26 +175,25 @@ export function Hero() {
                       <button
                         key={stage}
                         type="button"
-                        className={`border rounded-xl py-3 text-white transition-all duration-300 ${
-                          index === 1 
-                            ? 'bg-[#f97068] border-[#f97068]' 
-                            : 'bg-transparent border-gray-600 hover:border-[#f97068]/50'
-                        }`}
+                        className={`border rounded-xl py-3 text-white transition-all duration-300 ${index === 1
+                          ? 'bg-[#f97068] border-[#f97068]'
+                          : 'bg-transparent border-gray-600 hover:border-[#f97068]/50'
+                          }`}
                       >
                         {stage}
                       </button>
                     ))}
                   </div>
                 </div>
-                
-                <Button 
-                  type="submit" 
+
+                <Button
+                  type="submit"
                   className="w-full rounded-xl font-bold py-6 bg-[#f97068] hover:bg-[#e85f57] text-white text-lg transition-all duration-300"
                 >
                   Get Instant Report →
                 </Button>
               </form>
-              
+
               <div className="flex items-center justify-center gap-6 mt-6 text-xs text-gray-400">
                 <div className="flex items-center gap-1">
                   <CheckCircle className="w-3 h-3 text-green-400" />

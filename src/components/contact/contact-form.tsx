@@ -100,12 +100,12 @@ export function ContactForm() {
           {/* Contact Cards */}
           <AnimateOnScroll delay={100}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <a href="tel:7777941611" className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow text-center">
+              <a href="tel:9737799937" className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow text-center">
                 <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Phone className="h-6 w-6 text-orange-600" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-1">Call Us</h3>
-                <p className="text-orange-600 font-medium">+91 77779 41611</p>
+                <p className="text-orange-600 font-medium">+91 97377 99937</p>
               </a>
 
               <div className="bg-white rounded-2xl p-6 shadow-md text-center">

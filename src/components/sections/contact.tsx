@@ -9,11 +9,11 @@ import { Phone, Mail, MapPin, Send, Clock, Headphones } from 'lucide-react';
 const offices = [
   {
     title: 'Head Office',
-    address: 'Your Head Office Address Here, City, State - PIN',
+    address: 'B-304/2 Gopal Palace, Near Shiromani Complex, opposite Ocean Park, Nehru Nagar, Ahmedabad-380015',
   },
   {
     title: 'Branch Office',
-    address: 'Your Branch Office Address Here, City, State - PIN',
+    address: 'Ahmedabad, Gujarat',
   },
 ];
 
@@ -74,7 +74,7 @@ export function Contact() {
               <h3 className="text-xl font-bold text-gray-900 mb-6">
                 Start Your Funding Journey
               </h3>
-              
+
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -89,7 +89,7 @@ export function Contact() {
                     placeholder="Enter your full name"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number *
@@ -103,7 +103,7 @@ export function Contact() {
                     placeholder="+91 XXXXX XXXXX"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Email Address *
@@ -117,7 +117,7 @@ export function Contact() {
                     placeholder="your@email.com"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Funding Requirement *
@@ -136,9 +136,9 @@ export function Contact() {
                     <option value="1Cr+">₹1Cr+</option>
                   </select>
                 </div>
-                
-                <Button 
-                  type="submit" 
+
+                <Button
+                  type="submit"
                   className="w-full rounded-xl font-bold py-4 bg-[#f97068] hover:bg-[#e85f57] text-white text-lg transition-all duration-300 hover:scale-[1.02]"
                 >
                   <Send className="w-5 h-5 mr-2" />
@@ -164,16 +164,16 @@ export function Contact() {
                 <p className="text-gray-300 mb-6">
                   Speak with our funding experts directly. Get personalized guidance for your business needs.
                 </p>
-                
+
                 <div className="flex items-center gap-2 text-gray-400 text-sm mb-6">
                   <Clock className="w-4 h-4" />
                   <span>Mon - Sat, 9 AM - 6 PM</span>
                 </div>
-                
+
                 <Button asChild size="lg" className="w-full rounded-xl font-bold bg-white text-gray-900 hover:bg-gray-100 transition-all">
-                  <a href="tel:7777941611" className="flex items-center justify-center gap-2">
+                  <a href="tel:9737799937" className="flex items-center justify-center gap-2">
                     <Phone className="w-5 h-5" />
-                    Call: +91 77779 41611
+                    Call: +91 97377 99937
                   </a>
                 </Button>
               </div>
@@ -183,11 +183,11 @@ export function Contact() {
             <AnimateOnScroll delay={400}>
               <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
                 <div className="space-y-4">
-                  <a href="tel:7777941611" className="flex items-center gap-3 text-gray-600 hover:text-[#f97068] transition-colors">
+                  <a href="tel:9737799937" className="flex items-center gap-3 text-gray-600 hover:text-[#f97068] transition-colors">
                     <div className="w-10 h-10 rounded-full bg-[#f97068]/10 flex items-center justify-center">
                       <Phone className="w-5 h-5 text-[#f97068]" />
                     </div>
-                    <span className="font-medium">+91 77779 41611</span>
+                    <span className="font-medium">+91 97377 99937</span>
                   </a>
                   <a href="mailto:info.ewolyn@gmail.com" className="flex items-center gap-3 text-gray-600 hover:text-[#f97068] transition-colors">
                     <div className="w-10 h-10 rounded-full bg-[#f97068]/10 flex items-center justify-center">

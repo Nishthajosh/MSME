@@ -25,7 +25,7 @@ const industries = [
 ];
 
 const states = [
-  'Andhra Pradesh', 'Gujarat', 'Karnataka', 'Maharashtra', 
+  'Andhra Pradesh', 'Gujarat', 'Karnataka', 'Maharashtra',
   'Tamil Nadu', 'Telangana', 'Uttar Pradesh', 'West Bengal',
   'Delhi', 'Rajasthan', 'Kerala', 'Punjab', 'Other'
 ];
@@ -98,14 +98,14 @@ export function FundingForm() {
             <CheckCircle2 className="h-20 w-20 text-emerald-500 mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Application Submitted!</h2>
             <p className="text-gray-600 mb-8">
-              Thank you for your funding application. Our team will analyze your requirements 
+              Thank you for your funding application. Our team will analyze your requirements
               and contact you within 24-48 hours with personalized funding options.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild variant="outline">
-                <a href="tel:7777941611" className="flex items-center gap-2">
+                <a href="tel:9737799937" className="flex items-center gap-2">
                   <Phone className="h-4 w-4" />
-                  Call: +91 77779 41611
+                  Call: +91 97377 99937
                 </a>
               </Button>
               <Button onClick={() => setIsSubmitted(false)}>
@@ -139,13 +139,13 @@ export function FundingForm() {
           {/* Contact Info Cards */}
           <AnimateOnScroll delay={100}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <a href="tel:7777941611" className="bg-white rounded-xl p-5 shadow-md hover:shadow-lg transition-shadow flex items-center gap-4">
+              <a href="tel:9737799937" className="bg-white rounded-xl p-5 shadow-md hover:shadow-lg transition-shadow flex items-center gap-4">
                 <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <Phone className="h-5 w-5 text-emerald-600" />
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Call Us</p>
-                  <p className="font-semibold text-gray-900">+91 77779 41611</p>
+                  <p className="font-semibold text-gray-900">+91 97377 99937</p>
                 </div>
               </a>
 

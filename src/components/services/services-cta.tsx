@@ -25,7 +25,7 @@ export function ServicesCTA() {
           </div>
         ))}
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <AnimateOnScroll>
           <div className="text-center max-w-3xl mx-auto">
@@ -47,9 +47,9 @@ export function ServicesCTA() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-gray-600 text-white hover:bg-white/10 rounded-full font-bold">
-                <a href="tel:7777941611">
+                <a href="tel:9737799937">
                   <Phone className="mr-2 h-5 w-5" />
-                  Call: +91 77779 41611
+                  Call: +91 97377 99937
                 </a>
               </Button>
             </div>

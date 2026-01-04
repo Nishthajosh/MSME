@@ -1,16 +1,17 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import { AnimateOnScroll } from '@/components/animate-on-scroll';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Palette, 
-  FileText, 
-  Video, 
-  Share2, 
-  Globe, 
-  MessageSquare, 
-  Megaphone, 
+import {
+  Palette,
+  FileText,
+  Video,
+  Share2,
+  Globe,
+  MessageSquare,
+  Megaphone,
   LayoutDashboard,
   CheckCircle2,
   TrendingUp
@@ -67,25 +68,44 @@ const digitalServices = [
   },
 ];
 
+const FloatingSnowflakes = () => {
+  const [elements, setElements] = useState<Array<{ left: string, top: string, delay: string, duration: string }>>([]);
+
+  useEffect(() => {
+    setElements([...Array(12)].map(() => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      delay: `${Math.random() * 5}s`,
+      duration: `${3 + Math.random() * 4}s`,
+    })));
+  }, []);
+
+  return (
+    <>
+      {elements.map((style, i) => (
+        <div
+          key={i}
+          className="absolute text-gray-200 text-sm"
+          style={{
+            left: style.left,
+            top: style.top,
+            animation: `float ${style.duration} ease-in-out infinite`,
+            animationDelay: style.delay,
+          }}
+        >
+          ❄
+        </div>
+      ))}
+    </>
+  );
+};
+
 export function DigitalMarketing() {
   return (
     <section id="digital-marketing" className="py-20 bg-white relative">
       {/* Floating elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(12)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute text-gray-200 text-sm"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
-            }}
-          >
-            ❄
-          </div>
-        ))}
+        <FloatingSnowflakes />
       </div>
       <div className="container mx-auto px-4 relative z-10">
         <AnimateOnScroll>
