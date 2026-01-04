@@ -13,15 +13,10 @@ export function FeaturedPost() {
 
             <Card className="overflow-hidden border-0 shadow-xl bg-white rounded-2xl">
                 <div className="grid md:grid-cols-2 gap-0">
-                    <div className="relative h-[300px] md:h-[450px] overflow-hidden bg-gray-100">
-                        {/* Placeholder for the image */}
-                        <div className="absolute inset-0 flex items-center justify-center text-gray-400 bg-gray-200">
-                            <span className="text-lg">Featured Image</span>
-                        </div>
-                        {/* In a real app, use next/image here */}
+                    <div className="relative h-[300px] md:h-[450px] overflow-hidden bg-[#1a2332]">
                         <img
-                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80"
-                            alt="Featured Post"
+                            src="/images/blog/startup-funding.png"
+                            alt="How To Raise Funds For Startup In India"
                             className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                         />
                     </div>
@@ -49,7 +44,7 @@ export function FeaturedPost() {
                             </div>
                             <div className="flex items-center gap-2">
                                 <User className="w-4 h-4" />
-                                <span>Enego Team</span>
+                                <span>Ewolyn Team</span>
                             </div>
                             <div>8 min read</div>
                         </div>

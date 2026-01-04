@@ -304,15 +304,15 @@ export default function LoansPage() {
                 <div
                   key={index}
                   className={`p-8 rounded-2xl ${index === 0 ? 'bg-red-50' :
-                      index === 1 ? 'bg-blue-50' :
-                        index === 2 ? 'bg-green-50' :
-                          'bg-orange-50'
+                    index === 1 ? 'bg-blue-50' :
+                      index === 2 ? 'bg-green-50' :
+                        'bg-orange-50'
                     }`}
                 >
                   <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 ${index === 0 ? 'bg-white text-red-500' :
-                      index === 1 ? 'bg-white text-blue-500' :
-                        index === 2 ? 'bg-white text-green-500' :
-                          'bg-white text-orange-500'
+                    index === 1 ? 'bg-white text-blue-500' :
+                      index === 2 ? 'bg-white text-green-500' :
+                        'bg-white text-orange-500'
                     }`}>
                     <card.icon className="w-7 h-7" />
                   </div>

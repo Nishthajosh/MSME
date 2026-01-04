@@ -9,7 +9,7 @@ import { Values } from '@/components/sections/values';
 import { Process } from '@/components/sections/process';
 import { Offices } from '@/components/sections/offices';
 import { Contact } from '@/components/sections/contact';
-import { IndiaPresence } from '@/components/sections/india-presence';
+
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <Hero />
       <ClientSlider />
       <Stats />
-      <IndiaPresence />
+
       <Services />
       <Funding />
       <Process />

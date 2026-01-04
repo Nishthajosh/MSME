@@ -55,7 +55,7 @@ export function Stats() {
   return (
     <section className="py-20 bg-gradient-to-b from-[#0f1729] to-[#1a1f3a] relative overflow-hidden">
       <FloatingElements />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <AnimateOnScroll>
           <div className="text-center mb-12">
@@ -90,112 +90,7 @@ export function Stats() {
           ))}
         </div>
 
-        {/* Bottom Section - Map & Stats */}
-        <div className="grid lg:grid-cols-2 gap-6">
-          {/* Left - India Map Placeholder */}
-          <AnimateOnScroll delay={200}>
-            <div className="bg-[#1e2642]/80 border border-gray-700/50 rounded-2xl p-6">
-              <div className="flex items-center gap-2 mb-6">
-                <MapPin className="w-5 h-5 text-red-400" />
-                <h3 className="text-xl font-bold text-white">Pan-India Presence</h3>
-              </div>
-              
-              {/* Simplified India map representation */}
-              <div className="relative h-64 bg-gradient-to-b from-[#2a3352] to-[#1e2642] rounded-xl flex items-center justify-center mb-6 overflow-hidden">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🗺️</div>
-                  <p className="text-gray-400">India Coverage Map</p>
-                </div>
-                {/* City markers */}
-                <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-red-500 rounded-full animate-pulse delay-100"></div>
-                <div className="absolute bottom-1/3 left-1/2 w-3 h-3 bg-red-500 rounded-full animate-pulse delay-200"></div>
-              </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-[#2a3352] rounded-xl p-4 text-center">
-                  <p className="text-gray-400 text-sm">Active States</p>
-                  <p className="text-2xl font-bold text-[#f97068]">28/36</p>
-                </div>
-                <div className="bg-[#2a3352] rounded-xl p-4 text-center">
-                  <p className="text-gray-400 text-sm">Top Region</p>
-                  <p className="text-2xl font-bold text-[#f97068]">West India</p>
-                </div>
-              </div>
-            </div>
-          </AnimateOnScroll>
-
-          {/* Right - Stats */}
-          <div className="space-y-6">
-            {/* Top MSME States */}
-            <AnimateOnScroll delay={300}>
-              <div className="bg-[#1e2642]/80 border border-gray-700/50 rounded-2xl p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <BarChart3 className="w-5 h-5 text-blue-400" />
-                  <h3 className="text-lg font-bold text-white">Top MSME States</h3>
-                </div>
-                <div className="space-y-3">
-                  {topStates.map((item) => (
-                    <div key={item.state}>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="text-white">{item.state}</span>
-                        <span className="text-[#f97068] font-medium">{item.count}</span>
-                      </div>
-                      <div className="h-2 bg-[#2a3352] rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-gradient-to-r from-[#f97068] to-[#ff8a7a] rounded-full"
-                          style={{ width: item.width }}
-                        ></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </AnimateOnScroll>
-
-            {/* Sector Distribution */}
-            <AnimateOnScroll delay={400}>
-              <div className="bg-[#1e2642]/80 border border-gray-700/50 rounded-2xl p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <Target className="w-5 h-5 text-purple-400" />
-                  <h3 className="text-lg font-bold text-white">Sector Distribution</h3>
-                </div>
-                <div className="flex justify-around items-center">
-                  {sectorData.map((sector) => (
-                    <div key={sector.name} className="text-center">
-                      <div className="relative w-20 h-20 mx-auto mb-2">
-                        <svg className="w-20 h-20 transform -rotate-90">
-                          <circle
-                            cx="40"
-                            cy="40"
-                            r="35"
-                            stroke="#2a3352"
-                            strokeWidth="6"
-                            fill="none"
-                          />
-                          <circle
-                            cx="40"
-                            cy="40"
-                            r="35"
-                            stroke="#f97068"
-                            strokeWidth="6"
-                            fill="none"
-                            strokeDasharray={`${sector.percentage * 2.2} 220`}
-                            strokeLinecap="round"
-                          />
-                        </svg>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-white font-bold">{sector.percentage}%</span>
-                        </div>
-                      </div>
-                      <p className="text-gray-400 text-sm">{sector.name}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </div>
 
         {/* Government Stats Banner */}
         <AnimateOnScroll delay={500}>
