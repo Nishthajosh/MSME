@@ -152,13 +152,13 @@ export function Header() {
       {/* Main Header - White */}
       <header
         className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-            ? 'bg-white shadow-lg'
-            : 'bg-white shadow-md'
+          ? 'bg-white shadow-lg'
+          : 'bg-white shadow-md'
           }`}
       >
-        <div className="container mx-auto px-4 flex justify-between items-center h-16">
+        <div className="container mx-auto px-4 flex justify-between items-center h-24">
           <Link href="/" className="flex items-center gap-2">
-            <EwolynLogo className="h-10 w-auto" />
+            <EwolynLogo className="h-20 w-auto" />
           </Link>
 
           {/* Navigation */}

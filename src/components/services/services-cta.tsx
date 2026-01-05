@@ -40,7 +40,7 @@ export function ServicesCTA() {
               Our experts will analyze your business requirements and recommend the best services for your growth. Get a free consultation today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-[#f97068] hover:bg-[#e85f57] text-white rounded-full font-bold shadow-lg">
+              <Button asChild size="lg" className="bg-[#f97068] text-white rounded-full font-bold shadow-lg">
                 <Link href="/contact">
                   <MessageSquare className="mr-2 h-5 w-5" />
                   Get Free Consultation

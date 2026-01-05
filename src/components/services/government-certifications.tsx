@@ -175,7 +175,7 @@ export function GovernmentCertifications() {
                     </li>
                   ))}
                 </ul>
-                <Button asChild className="bg-[#f97068] hover:bg-[#e85f57] text-white rounded-full">
+                <Button asChild className="bg-[#f97068] text-white rounded-full">
                   <Link href="/contact">
                     Get Tax Benefits <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>

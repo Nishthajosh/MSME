@@ -50,10 +50,10 @@ export function WhyChooseUs() {
             </div>
 
             <div className="mt-8">
-              <Button className="bg-[#d22d2d] hover:bg-[#b02222] text-white px-8 py-6 rounded-lg text-lg">
+              <Button className="bg-[#d22d2d] text-white px-8 py-6 rounded-lg text-lg">
                 Partner With Us <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button variant="outline" className="ml-4 border-slate-700 text-white hover:bg-slate-800 h-[60px] px-8 text-lg">
+              <Button variant="outline" className="ml-4 border-slate-700 text-white h-[60px] px-8 text-lg bg-transparent">
                 Get In Touch
               </Button>
             </div>

@@ -58,12 +58,12 @@ export function ImportantNotice() {
 
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                                 <Link href="/funding">
-                                    <Button className="bg-white text-[#d22d2d] hover:bg-gray-100 h-14 px-8 rounded-xl font-bold text-lg w-full sm:w-auto">
+                                    <Button className="bg-white text-[#d22d2d] h-14 px-8 rounded-xl font-bold text-lg w-full sm:w-auto">
                                         Start Your Journey <ArrowRight className="ml-2 w-5 h-5" />
                                     </Button>
                                 </Link>
                                 <Link href="/services">
-                                    <Button variant="outline" className="border-red-400 text-white hover:bg-red-800 hover:text-white h-14 px-8 rounded-xl font-medium text-lg w-full sm:w-auto">
+                                    <Button variant="outline" className="border-red-400 text-white h-14 px-8 rounded-xl font-medium text-lg w-full sm:w-auto bg-transparent">
                                         Explore Services
                                     </Button>
                                 </Link>

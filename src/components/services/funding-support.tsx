@@ -5,12 +5,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { 
-  Banknote, 
-  Building, 
-  Landmark, 
-  HandCoins, 
-  PiggyBank, 
+import {
+  Banknote,
+  Building,
+  Landmark,
+  HandCoins,
+  PiggyBank,
   TrendingUp,
   CheckCircle2,
   ArrowRight
@@ -168,12 +168,12 @@ export function FundingSupport() {
               Check your eligibility for 50+ funding schemes in just 2 minutes. Our experts will guide you through the entire process.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-[#f97068] hover:bg-[#e85f57] text-white rounded-full font-bold shadow-lg">
+              <Button asChild size="lg" className="bg-[#f97068] text-white rounded-full font-bold shadow-lg">
                 <Link href="/funding">
                   Check Eligibility <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-gray-600 text-white hover:bg-white/10 rounded-full font-bold shadow-lg transition-all hover:scale-105">
+              <Button asChild size="lg" variant="outline" className="border-gray-600 text-white hover:bg-white/10 rounded-full font-bold shadow-lg">
                 <Link href="/contact">
                   Talk to Expert
                 </Link>

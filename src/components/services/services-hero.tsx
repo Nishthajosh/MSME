@@ -25,7 +25,7 @@ export function ServicesHero() {
               From company registration to funding support, we provide end-to-end solutions for Indian startups and MSMEs. Your success is our mission.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-[#f97068] hover:bg-[#e85f57] text-white rounded-full font-bold shadow-lg transition-all hover:scale-105">
+              <Button asChild size="lg" className="bg-[#f97068] text-white rounded-full font-bold shadow-lg">
                 <Link href="/contact">
                   Get Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />

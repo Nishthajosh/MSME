@@ -69,12 +69,12 @@ export function Footer() {
   return (
     <>
       <footer className="bg-[#0f1729] text-white">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 py-24">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Company Info */}
             <div className="lg:col-span-2">
               <Link href="/" className="flex items-center gap-2 mb-4">
-                <EwolynLogo className="h-10 w-auto" />
+                <EwolynLogo className="h-64 w-auto" />
               </Link>
               <p className="text-gray-400 mb-6 max-w-sm">
                 Empowering entrepreneurs with seamless access to funding, expert guidance, and innovative business solutions.
